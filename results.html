@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniAi - Your University Recommendations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
+        header { background-color: #003366; color: white; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+        header .logo { font-size: 1.5rem; font-weight: bold; }
+        .back-link { color: white; text-decoration: none; font-size: 1rem; }
+        .back-link:hover { text-decoration: underline; }
+        .main-container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        .results-header { text-align: center; margin-bottom: 2rem; }
+        .results-header h1 { font-size: 2.5rem; color: #003366; }
+        .disclaimer { background-color: #fff3cd; border-left: 5px solid #ffc107; padding: 1rem; margin-bottom: 2rem; border-radius: 5px; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+        .university-card { background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+        .university-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
+        .card-content { padding: 1.5rem; }
+        .card-content h2 { font-size: 1.4rem; color: #003366; margin-top: 0; margin-bottom: 0.5rem; }
+        .card-content .city { color: #555; font-size: 1rem; margin-bottom: 1rem; }
+        .info-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .info-item i { color: #005a9e; width: 20px; text-align: center; }
+        .card-footer { background-color: #f8f9fa; padding: 1rem 1.5rem; text-align: right; }
+        .website-link { background-color: #003366; color: white; text-decoration: none; padding: 0.6rem 1.2rem; border-radius: 5px; transition: background-color 0.3s; }
+        .website-link:hover { background-color: #005a9e; }
+        #no-results { text-align: center; padding: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><i>UniAi</i></div>
+        <a href="Programs.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Search</a>
+    </header>
+
+    <main class="main-container">
+        <div class="results-header">
+            <h1>Your Recommended Universities</h1>
+        </div>
+        
+        <!-- Disclaimer will be inserted here by JS -->
+        <div id="disclaimer-container"></div>
+
+        <!-- University cards will be inserted here by JS -->
+        <div id="results-grid" class="results-grid"></div>
+
+        <!-- This message shows if no results are found -->
+        <div id="no-results" style="display: none;">
+            <h2>No results to display.</h2>
+            <p>Please <a href="Programs.html">go back</a> and try a different search.</p>
+        </div>
+    </main>
+
+    <!-- This script renders the results -->
+    <script src="results.js"></script>
+</body>
+</html>
