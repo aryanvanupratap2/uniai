@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // API_URL is now just the endpoint, as it's on the same domain
-    const API_URL = '/find-universities';
+    const API_URL = 'https://uniai-pubz.onrender.com/find-universities';
 
     const searchButton = document.getElementById('search-btn');
     const courseInput = document.getElementById('course-input');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchData = getSearchData();
 
         try {
-            const response = await fetch(https://uniai-pubz.onrender.com/find-universities, {
+            const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(searchData),
@@ -83,5 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         errorMessage.style.display = 'none';
     }
 });
+
 
 
