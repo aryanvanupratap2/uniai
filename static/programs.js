@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchData = getSearchData();
 
         try {
-            const response = await fetch(API_URL, {
+            const response = await fetch(https://uniai-pubz.onrender.com/find-universities, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(searchData),
@@ -83,4 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
         errorMessage.style.display = 'none';
     }
 });
+
 
