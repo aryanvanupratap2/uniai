@@ -30,7 +30,7 @@ def home():
     return render_template('Home.html')
 
 @app.route('/programs')
-def home():
+def programs():
     """Serves the main search page (index.html)."""
     return render_template('Programs.html')
     
@@ -126,4 +126,5 @@ def parse_gemini_response(response_text: str):
 if __name__ == '__main__':
     # This part is for local development. Render will use the Gunicorn command instead.
     app.run(debug=True, host='0.0.0.0', port=5000)
+
 
