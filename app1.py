@@ -26,9 +26,14 @@ model = genai.GenerativeModel('gemini-1.5-flash-latest')
 
 @app.route('/')
 def home():
-    """Serves the main search page (index.html)."""
-    return render_template('index.html')
+    """Serves the main search page (Home.html)."""
+    return render_template('Home.html')
 
+@app.route('/programs')
+def home():
+    """Serves the main search page (index.html)."""
+    return render_template('Programs.html')
+    
 @app.route('/results')
 def results_page():
     """Serves the results page."""
@@ -121,3 +126,4 @@ def parse_gemini_response(response_text: str):
 if __name__ == '__main__':
     # This part is for local development. Render will use the Gunicorn command instead.
     app.run(debug=True, host='0.0.0.0', port=5000)
+
