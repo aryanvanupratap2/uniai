@@ -20,7 +20,7 @@ if not api_key:
     raise ValueError("GEMINI_API_KEY environment variable not set.")
 
 genai.configure(api_key=api_key)
-model = genai.GenerativeModel('gemini-1.5-flash-latest')
+model = genai.GenerativeModel('gemini-3-flash-review')
 
 # --- Frontend Routes ---
 
@@ -126,6 +126,7 @@ def parse_gemini_response(response_text: str):
 if __name__ == '__main__':
     # This part is for local development. Render will use the Gunicorn command instead.
     app.run(debug=True, host='0.0.0.0', port=5000)
+
 
 
 
